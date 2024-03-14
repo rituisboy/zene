@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const musicSchema = new mongoose.Schema({
-  title:{ String },
-  likes:{ Number },
-  singer:{ String },
+  title: { type: String },
+  likes: { type: Number },
+  singer: { type: String },
   url: { type: String, required: true },
   genre: {
     type: String,

@@ -15,13 +15,15 @@ const getAllSongs = async (req, res) => {
 
 const addSong = async (req, res) => {
     try {
-        if (!req.body.title || !req.body.artist || !req.body.releaseYear) {
+        if (!req.body.title || !req.body.singer) {
             return res.status(400).json({ message: 'Missing fields' });
         }
+        console.log(req.body);
         const newMusic = {
             title: req.body.title,
-            artist: req.body.artist,
-            releaseYear: req.body.releaseYear,
+            likes: req.body.likes,
+            singer: req.body.singer,
+            url: req.body.url,
             genre: req.body.genre
         };
         const music = await Music.create(newMusic);
