@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
-
-const musicSchema = new Schema({
-  title: String,
-  likes: Number,
-  singer: String,
+const musicSchema = new mongoose.Schema({
+  title:{ String },
+  likes:{ Number },
+  singer:{ String },
+  url: { type: String, required: true },
   genre: {
     type: String,
     enum: [
@@ -53,4 +52,4 @@ const musicSchema = new Schema({
   },
 });
 
-module.exports = {Music: mongoose.model("Music", musicSchema)}
+module.exports = {Music: mongoose.model('Music', musicSchema)}
