@@ -2,7 +2,6 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const app = express()
-
 app.use(cors());
 app.use(express.json())
 require('dotenv').config()
@@ -14,7 +13,7 @@ app.use('/music',music)
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{console.log('successfully connected to the cloud database')
 app.listen(PORT,()=>{
-    console.log(`server is listening on ${PORT} `);
+    console.log(`http://localhost:${PORT}`)
 })})
 .catch((error)=>{console.log(error);})
 
