@@ -7,8 +7,8 @@ app.use(express.json());
 require("dotenv").config();
 const PORT = 4002;
 
-const { Music } = require("./models/music");
-const music = require("./routes/routes");
+const music = require('./routes/routes')
+app.use('/music',music)
 
 mongoose
   .connect(process.env.MONGO_URI)
